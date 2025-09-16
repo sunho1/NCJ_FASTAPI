@@ -1,9 +1,10 @@
 from typing import Union
 from fastapi import FastAPI
-from app import routers
+from app.routers import router
+
 
 app = FastAPI()
-app.include_router(routers.router)
+app.include_router(router)
 
 # http://127.0.0.1:8000/api/v1/users/auth/login
 
@@ -11,7 +12,7 @@ app.include_router(routers.router)
 # 여러 라우터 한번에 등록
 
     
-@app.get("/")
-def app_start():
-    return {"Hello":"World"}
+# @app.get("/")
+# def app_start():
+#     return {"Hello":"World"}
 
